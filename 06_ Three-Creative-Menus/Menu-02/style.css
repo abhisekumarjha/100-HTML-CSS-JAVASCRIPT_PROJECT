@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #212121;
+    color: #ffffff;
+}
+
+.menu {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu a {
+    text-decoration: none;
+    padding: .5rem .75rem;
+    margin: 0 .5rem;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: transparent;
+    color: #e3e3e3;
+    font-size: 1.5rem;
+    position: relative;
+    transition: all 2s;
+}
+
+.menu a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* inset: 0; */
+    /* inset: 0; applies 0 to top, right, bottom, and left simultaneously. */
+
+    border-top: 2px solid #c21235;
+    border-bottom: 2px solid #c21235;
+    opacity: 0;
+    transform: scaleY(2);
+    transition: all 1s;
+    border-radius: 5px;
+}
+
+.menu a:hover::before {
+    transform: scaleY(1.3);
+    opacity: 1;
+}
+
+.menu a::after {
+    content: "";
+    background-color: #dc143c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+    transform: scale(0);
+    z-index: -1;
+    border-radius: 5px;
+}
+
+.menu a:hover::after {
+    transform: scale(1);
+}
